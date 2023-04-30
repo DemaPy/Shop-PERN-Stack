@@ -60,8 +60,7 @@ const Device = sequelize.define("device", {
         defaultValue: 0
     },
     img: {
-        type: DataTypes.INTEGER,
-
+        type: DataTypes.STRING,
     }
 })
 
@@ -149,7 +148,7 @@ Device.belongsTo(Brand)
 Device.hasMany(Rating)
 Rating.belongsTo(Device)
 
-Device.hasMany(DeviceInfo)
+Device.hasMany(DeviceInfo, {as: "info"})
 DeviceInfo.belongsTo(Device)
 
 Device.hasMany(BasketDevice)

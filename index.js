@@ -1,31 +1,24 @@
 const express = require("express")
 const models = require("./models/models")
+const fileUpload = require("express-fileupload")
 const sequelize = require("./db")
 const cors = require("cors")
+const router = require("./routes/index")
+const errorHandler = require("./midlleware/errorHandlingMiddleware")
+const path = require("path")
 
 
 const PORT = 5000
 
 const app = express()
 app.use(express.json())
+app.use(express.static(path.resolve(__dirname, "static")))
+app.use(fileUpload({}))
 app.use(cors())
+app.use("/api", router)
 
 
-
-app.get("/", (req, res) => {
-    res.status(200).json({
-        message: "Ok"
-    })
-})
-
-
-
-
-
-
-
-
-
+app.use(errorHandler)
 
 
 const start = async () => {
