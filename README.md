@@ -1,6 +1,4 @@
-# Shop-PERN-Stack
-
-## FullStack App TechZone - PostgreSQL Express React NodeJs
+# FullStack App TechZone - PostgreSQL Express React NodeJs
 
 ## Shop Page
 ![image](https://user-images.githubusercontent.com/80632445/236624886-2311c35c-147e-4717-828f-4575bb59fce1.png)
