@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { AdminPanel, Basket, DevicePage, Shop } from '../pages'
 import { RequireAuth } from './RequireAuth'
 import { Error } from './Error'
@@ -18,6 +18,7 @@ export const AppRouter = () => {
     <>
       <NavScroll/>
       <Routes>
+        <Route path='/' element={<Navigate to={'/shop'} />}/>
         <Route path='/' element={<Auth />}>
           <Route path='registration' element={<Registration />} />
           <Route path='login' element={<Authorization />} />
