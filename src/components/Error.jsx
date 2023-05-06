@@ -24,13 +24,9 @@ export function Error() {
       {
         location?.pathname
           ?
-          (
-            <h2>You are trying get access to {location.pathname}. <br /> You will be redirected to registration page in 5 second</h2>
-          )
+          <h2>You are trying get access to {location.pathname}. <br /> You will be redirected to registration page in 5 second</h2>
           :
-          (
-            <h2>You will be redirected to home page in 5 seconds</h2>
-          )
+          <h2>You will be redirected to home page in 5 seconds</h2>
       }
 
     </>
