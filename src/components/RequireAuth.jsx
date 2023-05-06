@@ -1,24 +1,23 @@
-import { Navigate, Outlet, useLocation, useOutlet } from "react-router-dom";
-import { Navigation } from "./Navigation";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import {useAppContext} from "../store/userContext"
 
 
 
 
 
-
-export function RequireAuth({isAuth}) {
+export function RequireAuth() {
   const location = useLocation()
+  const {user} = useAppContext()
 
-  console.log(isAuth)
 
-  if (!isAuth) {
-    return <Navigate to='/auth' state={{from: location}} />
+  if (!user.isAuth) {
+    return <Navigate to='/login' state={{from: location}} />
   }
 
   return (
     <>
-      <Navigation />
-      <Outlet context={{isAuth}}/>
+      {/* <Navigation /> */}
+      <Outlet />
     </>
   )
 }

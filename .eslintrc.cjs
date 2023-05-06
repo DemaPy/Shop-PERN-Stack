@@ -14,6 +14,8 @@ module.exports = {
     "indent": ["warn", 2],
     "no-undef": "off",
     "react/prop-types": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "react/jsx-key": "warn",
+    "react-hooks/exhaustive-deps": "off"
   },
 }

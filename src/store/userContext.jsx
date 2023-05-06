@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react"
 import { UserStore } from "./UserStore"
-import { DeviceStore } from "./deviceStore"
+import { DeviceStore } from "./DeviceStore"
 
 const Context = createContext(null)
 
@@ -10,7 +10,6 @@ export const useAppContext = () => {
 
   return data
 }
-
 
 
 export function UserProvider({ children }) {
